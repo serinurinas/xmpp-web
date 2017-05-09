@@ -24,16 +24,18 @@ let LoginForm = React.createClass({
   },
 
   handleClick () {
-    this._submit();
+    this._submit( );
+          e.preventDefault();
   },
 
   _submit () {
     if (this.state.jid.length === 0) {
       this.setState({ error: 'A Jabber ID is required' });
-      return;
+
     }
 
-    Actions.login(this.state.jid, this.state.password);
+     Actions.login(this.state.jid, this.state.password);
+          e.preventDefault();
   },
 
   handleJidChange (e) {
@@ -63,7 +65,7 @@ let LoginForm = React.createClass({
         </div>
 
         <div className="form-actions">
-          <RaisedButton label="Login" primary={true} onClick={this.handleClick} />
+          <RaisedButton label="Login" primary={true} onClick={this.handleClick}  />
         </div>
       </div>
     );

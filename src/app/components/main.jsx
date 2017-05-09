@@ -90,8 +90,6 @@ let Main = React.createClass({
     let content;
 
     if (this.state.loading) {
-      content = <CircularProgress mode="indeterminate" size={2} />;
-    } else if (this.state.loggedIn) {
       content = <App ownJID={this.state.ownJID} />;
     } else {
       content = <LoginForm />;

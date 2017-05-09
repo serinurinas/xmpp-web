@@ -3,7 +3,7 @@ let Actions   = require('../actions.js');
 let Immutable = require('immutable');
 let utils     = require('../utils');
 
-const BOSH_URL    = 'https://zeonfed.org/http-bind';
+const BOSH_URL    = 'https://dev.hylaa.net/jabber/http-bind';
 const STORE_NAME  = 'ConnectionStore';
 const CLIENT_NAME = 'XMPP Web';
 

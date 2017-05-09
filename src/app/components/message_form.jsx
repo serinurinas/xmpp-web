@@ -87,7 +87,7 @@ let MessageForm = React.createClass({
   render () {
     return (
       <div className="message-form form-compact">
-        <input type="text" value={this.state.body} onChange={this.handleChange} onKeyUp={this.handleKeyUp} onClick={this.handleBodyClick} />
+        <input type="text" value={this.state.body} placeholder={'HELLO'} onChange={this.handleChange} onKeyUp={this.handleKeyUp} onClick={this.handleBodyClick} />
 
         <IconButton iconStyle={{fontSize: '18px'}} style={{width: '42px', height: '42px'}} onClick={this.handleClick}>
           <FontIcon className="material-icons" color={Colors.green500}>send</FontIcon>
