@@ -13,10 +13,17 @@ let FileInput = require('react-file-input');
 let MessageForm = React.createClass({
   mixins: [React.addons.PureRenderMixin],
 
-        handleChange1: function(event) {
-            Actions.sendMessage(this.props.jid, 'data:image/png;base64' + data, 'text');
-
-        },
+  handleChange1: function(event) {
+    let reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+    let jid = this.props.jid;
+    reader.onload = function () {
+      Actions.sendMessage(jid, reader.result, 'text');
+    };
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+    };
+  },
 
   getInitialState () {
     return {
