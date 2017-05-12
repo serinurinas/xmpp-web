@@ -54,7 +54,7 @@ let LoginForm = React.createClass({
   render () {
     return (
       <div className="login-form" onKeyUp={this.handleKeyUp}>
-        <p className="info-text">You can login to XMPP Web with an account on any XMPP server. <a href="https://xmpp.net/directory.php" target="_blank">Choose to your heart's content from the IM&nbsp;Observatory!</a></p>
+          <p className="info-text">Please enter your JabberID and Password. Please and Thank you :-)</p>
 
         <div className="input-group">
           <TextField fullWidth={true} hintText="Jabber ID" value={this.state.jid} onChange={this.handleJidChange} errorText={this.state.error} />

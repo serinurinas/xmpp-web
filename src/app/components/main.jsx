@@ -90,6 +90,8 @@ let Main = React.createClass({
     let content;
 
     if (this.state.loading) {
+      content = <CircularProgress mode="indeterminate" size={2} />;
+    } else if (this.state.loggedIn) {
       content = <App ownJID={this.state.ownJID} />;
     } else {
       content = <LoginForm />;
@@ -97,6 +99,7 @@ let Main = React.createClass({
 
     return (
       <DocumentTitle title='XMPP Web'>
+
         <div className='wrapper__outer'>
           {content}
 

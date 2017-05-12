@@ -65,6 +65,7 @@ let RosterList = React.createClass({
     }
 
     return (
+
       <DocumentTitle title={unread}>
         <List className="roster">
           {{roster}}

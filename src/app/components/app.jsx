@@ -16,7 +16,7 @@ let App = React.createClass({
 
   getInitialState () {
     return {
-      openedJID: false,
+      openedJID: 'sarrenyaa@jabber.hylaa.net',
     };
   },
 

@@ -6,15 +6,24 @@ let utils   = require('../utils');
 let IconButton = mui.IconButton;
 let FontIcon   = mui.FontIcon;
 let Colors     = mui.Styles.Colors;
+let FileInput = require('react-file-input');
+
+
 
 let MessageForm = React.createClass({
   mixins: [React.addons.PureRenderMixin],
 
+        handleChange1: function(event) {
+            Actions.sendMessage(this.props.jid, 'data:image/png;base64' + data, 'text');
+
+        },
+
   getInitialState () {
     return {
-      body: '',
+      body: 'HELLO',
     };
   },
+
 
   componentDidMount () {
     this.typing      = false;
@@ -32,6 +41,7 @@ let MessageForm = React.createClass({
       this.idleSeconds = newIdleSeconds;
       this.typing      = newTyping;
     }.bind(this), 1000);
+      this._commitMessage();
   },
 
   componentWillUnmount () {
@@ -84,6 +94,9 @@ let MessageForm = React.createClass({
     });
   },
 
+
+
+
   render () {
     return (
       <div className="message-form form-compact">
@@ -92,6 +105,13 @@ let MessageForm = React.createClass({
         <IconButton iconStyle={{fontSize: '18px'}} style={{width: '42px', height: '42px'}} onClick={this.handleClick}>
           <FontIcon className="material-icons" color={Colors.green500}>send</FontIcon>
         </IconButton>
+          <form>
+              <FileInput name="myImage"
+                         accept=".png,.gif"
+                         placeholder="Upload Image"
+                         className="inputClass"
+                         onChange={this.handleChange1} />
+          </form>
       </div>
     );
   },
