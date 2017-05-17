@@ -30,9 +30,13 @@ let Message = React.createClass({
     }
 
     let body = message.get('body');
-    body     = linkify(body);
-    body     = emoji.unifiedToHTML(body);
+    if (body.startsWith("data:")){
+   	body = "<img src='" + body + "' width='60%'/>" 
 
+    } else {
+        body     = linkify(body);
+        body     = emoji.unifiedToHTML(body);
+    }
     return (
       <div className={classes.join(" ")}>
         <div className="message-bubble">
