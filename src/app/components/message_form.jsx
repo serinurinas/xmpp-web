@@ -7,6 +7,9 @@ let IconButton = mui.IconButton;
 let FontIcon   = mui.FontIcon;
 let Colors     = mui.Styles.Colors;
 let FileInput = require('react-file-input');
+let T
+
+
 
 
 
@@ -32,7 +35,7 @@ let MessageForm = React.createClass({
   },
 
 
-  componentDidMount () {
+   componentDidMount () {
     this.typing      = false;
     this.idleSeconds = 0;
 
@@ -82,7 +85,27 @@ let MessageForm = React.createClass({
   },
 
   handleClick (e) {
-    this._commitMessage();
+
+      let body = this.state.body;
+      let self = this;
+      if(body.startsWith("http://") || body.startsWith("https://")) {
+          fetch(body).then(function(response){
+              return response.text();
+          }).then(function(text){
+              let match = text.match(/<title>.*<\/title>/);
+              if(match != null && match.length >= 1) {
+                  let title = match[0].replace("<title>", "").replace("</title>", "");
+                  self.setState({
+                      body: body + " " + title,
+                  });
+                  self._commitMessage();
+              }
+          }).catch(function(e){
+              console.log(e);
+          });
+      } else {
+          this._commitMessage();
+      }
   },
 
   handleBodyClick (e) {
@@ -105,13 +128,21 @@ let MessageForm = React.createClass({
 
 
   render () {
+
     return (
       <div className="message-form form-compact">
         <input type="text" value={this.state.body} placeholder={'HELLO'} onChange={this.handleChange} onKeyUp={this.handleKeyUp} onClick={this.handleBodyClick} />
 
-        <IconButton iconStyle={{fontSize: '18px'}} style={{width: '42px', height: '42px'}} onClick={this.handleClick}>
-          <FontIcon className="material-icons" color={Colors.green500}>send</FontIcon>
-        </IconButton>
+        <TouchableHighlight onPress={this.handleClick()}
+                            className="material-icons" underlayColor={Colors.green500}
+                            iconStyle={{fontSize: '18px'}} style={{width: '42px', height: '42px'}}>
+
+
+            <Text style={styles.buttonText}>Send</Text>
+
+        </TouchableHighlight>
+
+
           <form>
               <FileInput name="myImage"
                          accept=".png,.gif"
@@ -119,6 +150,7 @@ let MessageForm = React.createClass({
                          className="inputClass"
                          onChange={this.handleChange1} />
           </form>
+
       </div>
     );
   },
