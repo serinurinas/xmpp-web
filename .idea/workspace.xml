@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8619a6ce-a973-41a7-84bf-a3bd8f25d521" name="Default" comment="" />
+    <list default="true" id="8619a6ce-a973-41a7-84bf-a3bd8f25d521" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/message_form.jsx" afterPath="$PROJECT_DIR$/src/app/components/message_form.jsx" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -18,8 +20,8 @@
       <file leaf-file-name="message_form.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/components/message_form.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="156" column="0" lean-forward="true" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
+            <state relative-caret-position="635">
+              <caret line="155" column="12" lean-forward="true" selection-start-line="155" selection-start-column="12" selection-end-line="155" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -335,12 +337,12 @@
       <updated>1494213640733</updated>
       <workItem from="1494213645481" duration="49913000" />
       <workItem from="1495435551321" duration="2161000" />
-      <workItem from="1495506549449" duration="8655000" />
+      <workItem from="1495506549449" duration="9019000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60729000" />
+    <option name="totallyTimeSpent" value="61093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="72" y="-8" width="1849" height="1089" extended-state="6" />
@@ -694,8 +696,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/message_form.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="156" column="0" lean-forward="true" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
+        <state relative-caret-position="635">
+          <caret line="155" column="12" lean-forward="true" selection-start-line="155" selection-start-column="12" selection-end-line="155" selection-end-column="12" />
           <folding />
         </state>
       </provider>

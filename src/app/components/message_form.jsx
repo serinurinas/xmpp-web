@@ -7,7 +7,7 @@ let IconButton = mui.IconButton;
 let FontIcon   = mui.FontIcon;
 let Colors     = mui.Styles.Colors;
 let FileInput = require('react-file-input');
-let T
+
 
 
 
@@ -86,26 +86,28 @@ let MessageForm = React.createClass({
 
   handleClick (e) {
 
+
       let body = this.state.body;
       let self = this;
-      if(body.startsWith("http://") || body.startsWith("https://")) {
-          fetch(body).then(function(response){
+      if (body.startsWith("http://") || body.startsWith("https://")) {
+          fetch(body).then(function (response) {
               return response.text();
-          }).then(function(text){
+          }).then(function (text) {
               let match = text.match(/<title>.*<\/title>/);
-              if(match != null && match.length >= 1) {
+              if (match != null && match.length >= 1) {
                   let title = match[0].replace("<title>", "").replace("</title>", "");
                   self.setState({
                       body: body + " " + title,
                   });
                   self._commitMessage();
               }
-          }).catch(function(e){
+          }).catch(function (e) {
               console.log(e);
           });
       } else {
           this._commitMessage();
       }
+
   },
 
   handleBodyClick (e) {
